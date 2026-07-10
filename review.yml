@@ -1,0 +1,89 @@
+aid: mend-health
+name: Mend
+review:
+  question: Does Mend expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-10'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. Mend delivers real-time telemedicine video
+    over WebRTC using Vonage TokBox and OpenTok media relay servers, and its own
+    api.mendfamily.com server handles session initialization and signaling. There
+    is no documented public WebSocket (ws:// or wss://) endpoint on Mend's own API
+    to model. The underlying WebRTC/TokBox transport is a third-party media layer,
+    not a Mend-published server-push API surface, so it is out of scope for a Mend
+    AsyncAPI document.
+findings:
+  summary: |
+    Mend does not publish a documented public WebSocket API. Mend is a
+    HIPAA-compliant telehealth and patient engagement platform for behavioral and
+    mental health organizations. It does operate a real API, served from
+    api.mendfamily.com (staging at api-stage.mendvip.com), which its own portal
+    uses for session initialization and signaling, and which supports EHR/PMS
+    integration alongside HL7 and SFTP. However, the API's reference documentation
+    is delivered through a login-gated customer knowledge base (the API
+    Documentation section at bestservice.mendfamily.com), not a public developer
+    portal. Real-time video runs over WebRTC via Vonage TokBox/OpenTok, not a
+    Mend-owned WebSocket API. No public, self-serve, bidirectional WebSocket
+    endpoint is documented on Mend's own API.
+  accessModel: |
+    Mend's programmatic surface is partner- and customer-gated. There is no open,
+    self-serve developer signup or public OpenAPI specification. API access is
+    provisioned as part of a commercial integration engagement, and the endpoint
+    reference is only visible inside Mend's authenticated knowledge base. For that
+    reason the logical APIs in this entry are marked endpointsModeled and their
+    concrete endpoint paths were intentionally not fabricated.
+  transports:
+  - protocol: REST
+    scheme: https
+    baseURL: https://api.mendfamily.com
+    documented: gated
+    note: Mend API server used for session initialization, signaling, and
+      integration. Reference docs are behind a login-gated knowledge base.
+  - protocol: HL7
+    scheme: mllp/sftp
+    documented: gated
+    note: EHR/PMS integration is also delivered via HL7 and SFTP as part of an
+      implementation engagement.
+  - protocol: WebRTC
+    scheme: https
+    documented: third-party
+    note: Real-time video/audio runs over WebRTC via Vonage TokBox and OpenTok
+      relay servers, not a Mend-owned API.
+  - protocol: WebSocket
+    scheme: wss
+    documented: false
+    note: No WebSocket endpoint is documented on Mend's own public API as of the
+      review date.
+  endpointsConfirmedRest: []
+  endpointsModeled: true
+sources:
+- url: https://mend.com/
+  type: Website
+  note: Mend behavioral health telehealth and patient engagement platform.
+- url: https://mend.com/how-it-works/
+  type: Documentation
+  note: Describes scheduling, reminders, video visits, digital forms, and EHR
+    integration; no public API/developer references.
+- url: https://bestservice.mendfamily.com/hc/en-us/sections/360007371714-API-Documentation
+  type: Documentation
+  note: API Documentation section of Mend's knowledge base. Login-gated; only meta
+    articles are publicly visible, confirming a gated API reference.
+- url: https://bestservice.mendfamily.com/hc/en-us/articles/360047495233-Healthcare-IT-Preparing-for-Mend-Telemedicine
+  type: Documentation
+  note: Names api.mendfamily.com and api-stage.mendvip.com as the API server, and
+    describes TokBox/OpenTok WebRTC relay servers for video.
+- url: https://mend.com/pricing/
+  type: Plans
+  note: Quote-based, modular, per-provider pricing; contact sales.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists on Mend's own API, and no public OpenAPI
+    or open developer portal is available. Mend's real API is partner/customer
+    gated, so this entry documents four logical APIs (appointments/scheduling,
+    patients, video visits, and digital forms) with endpointsModeled set to true
+    and no fabricated endpoint paths. No AsyncAPI document was created because
+    there is no Mend-owned server-push transport to model.

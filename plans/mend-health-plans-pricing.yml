@@ -1,0 +1,45 @@
+aid: mend-health
+name: Mend Plans and Pricing
+humanURL: https://mend.com/pricing/
+model: Quote-based, modular, per-provider subscription with sales contact required
+summary: |
+  Mend does not publish a fixed public price list for programmatic access. Pricing
+  is modular and quote-based, scaled by organization size, number of caregivers
+  (providers), and the mix of product families selected (telehealth, patient
+  engagement, digital forms, payments, and related add-ons). Third-party listings
+  report provider seats starting around 49 US dollars per provider per month with
+  unlimited patients, plus add-on and integration/maintenance fees. API and EHR
+  integration is provisioned as part of a commercial engagement rather than through
+  open self-serve signup, so API terms are established during the sales and
+  implementation process.
+plans:
+- name: Provider Subscription
+  price: From ~$49 per provider per month (third-party reported)
+  billing: Per provider, per month
+  patients: Unlimited patients included
+  notes: |
+    Entry-level per-provider seat pricing as reported by third-party software
+    directories. Actual pricing is quoted by Mend based on organization size and
+    selected product families.
+- name: Enterprise / Custom
+  price: Contact sales for a quote
+  billing: Custom, modular
+  notes: |
+    Larger behavioral and mental health organizations receive a custom modular
+    quote covering telehealth, patient engagement, digital forms, payments, and
+    integration services. EHR/API integration typically carries additional
+    integration and maintenance fees.
+addOns:
+- Integration and maintenance fees apply for EHR/PMS and API integrations
+- Per-provider support add-on fee
+accessModel: |
+  API access is not offered as an open, self-serve developer tier. It is enabled
+  as part of a customer or partner integration engagement, with reference
+  documentation delivered through Mend's login-gated customer knowledge base.
+sources:
+- url: https://mend.com/pricing/
+  note: Mend official pricing page (ROI-oriented, contact sales).
+- url: https://www.g2.com/products/mend/pricing
+  note: Third-party pricing listing.
+- url: https://www.capterra.com/p/165634/Mend-App/
+  note: Third-party pricing and reviews listing.

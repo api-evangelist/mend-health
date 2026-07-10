@@ -1,0 +1,121 @@
+aid: mend-health
+url: https://raw.githubusercontent.com/api-evangelist/mend-health/refs/heads/main/apis.yml
+name: Mend
+kind: company
+description: Mend is a HIPAA-compliant telehealth and patient engagement platform
+  for mental and behavioral healthcare organizations, powering appointment
+  scheduling, automated reminders, secure video visits, digital intake forms and
+  consents, patient messaging, payments, and AI no-show prediction. Mend integrates
+  with EHR and practice-management systems through a combination of HL7, SFTP, and
+  an API served from api.mendfamily.com. That API exists and is used by Mend's own
+  portal for session initialization and signaling, but its reference documentation
+  is delivered through a login-gated customer knowledge base rather than a public
+  developer portal, so Mend's programmatic surface is best characterized as
+  partner- and customer-gated rather than openly self-serve.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Telehealth
+- Telemedicine
+- Patient Engagement
+- Behavioral Health
+- Scheduling
+- Video Visits
+- Digital Forms
+- HIPAA
+- Healthcare
+created: '2026-07-10'
+modified: '2026-07-10'
+specificationVersion: '0.19'
+apis:
+- aid: mend-health:mend-health-appointments-api
+  name: Mend Appointments and Scheduling API
+  tags:
+  - Appointments
+  - Scheduling
+  - Reminders
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://bestservice.mendfamily.com/hc/en-us/sections/360007371714-API-Documentation
+  baseURL: https://api.mendfamily.com
+  endpointsModeled: true
+  properties:
+  - url: https://bestservice.mendfamily.com/hc/en-us/sections/360007371714-API-Documentation
+    type: Documentation
+  description: Logical grouping for creating and managing appointments, provider
+    availability, patient self-scheduling, rescheduling, and automated appointment
+    reminders. Mend documents these capabilities in its customer knowledge base and
+    serves the API from api.mendfamily.com, but the concrete endpoint paths are
+    behind a login-gated API Documentation section and are not published openly.
+    Endpoints are modeled from Mend's described capabilities and were not confirmed
+    against a public specification.
+- aid: mend-health:mend-health-patients-api
+  name: Mend Patients API
+  tags:
+  - Patients
+  - Demographics
+  - Records
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://bestservice.mendfamily.com/hc/en-us/sections/360007371714-API-Documentation
+  baseURL: https://api.mendfamily.com
+  endpointsModeled: true
+  properties:
+  - url: https://bestservice.mendfamily.com/hc/en-us/sections/360007371714-API-Documentation
+    type: Documentation
+  description: Logical grouping for creating and syncing patient records,
+    demographics, and contact details between Mend and an external EHR or
+    practice-management system. Mend performs this synchronization through a mix of
+    HL7, SFTP, and its api.mendfamily.com API, but the specific patient endpoints
+    are only described inside the gated customer knowledge base. Endpoints are
+    modeled from Mend's described capabilities and were not confirmed against a
+    public specification.
+- aid: mend-health:mend-health-video-visits-api
+  name: Mend Video Visits API
+  tags:
+  - Video Visits
+  - WebRTC
+  - Virtual Care
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://bestservice.mendfamily.com/hc/en-us/sections/360007371714-API-Documentation
+  baseURL: https://api.mendfamily.com
+  endpointsModeled: true
+  properties:
+  - url: https://bestservice.mendfamily.com/hc/en-us/sections/360007371714-API-Documentation
+    type: Documentation
+  description: Logical grouping for initializing secure video telemedicine sessions
+    and the virtual waiting room. The real-time media itself runs over WebRTC via
+    Vonage TokBox and OpenTok relay servers, while api.mendfamily.com handles
+    session initialization and signaling. There is no public, documented video
+    endpoint or WebSocket surface on Mend's own API. Endpoints are modeled from
+    Mend's described capabilities and were not confirmed against a public
+    specification.
+- aid: mend-health:mend-health-forms-api
+  name: Mend Digital Forms and Intake API
+  tags:
+  - Forms
+  - Intake
+  - Consents
+  - Assessments
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://bestservice.mendfamily.com/hc/en-us/sections/360007371714-API-Documentation
+  baseURL: https://api.mendfamily.com
+  endpointsModeled: true
+  properties:
+  - url: https://bestservice.mendfamily.com/hc/en-us/sections/360007371714-API-Documentation
+    type: Documentation
+  description: Logical grouping for assigning digital intake forms, consents, and
+    assessments to patients and returning their completed responses to the practice.
+    Mend describes these digital forms as a core patient-engagement capability, but
+    the programmatic endpoints live inside the gated API Documentation section.
+    Endpoints are modeled from Mend's described capabilities and were not confirmed
+    against a public specification.
+common:
+- type: Website
+  url: https://mend.com
+- type: LinkedIn
+  url: https://www.linkedin.com/company/mendfamily
+- type: Documentation
+  url: https://bestservice.mendfamily.com/hc/en-us/sections/360007371714-API-Documentation
+- type: Plans
+  url: plans/mend-health-plans-pricing.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
