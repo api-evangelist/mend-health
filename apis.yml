@@ -108,6 +108,8 @@ apis:
     Endpoints are modeled from Mend's described capabilities and were not confirmed
     against a public specification.
 common:
+- type: DomainSecurity
+  url: security/mend-health-domain-security.yml
 - type: Website
   url: https://mend.com
 - type: LinkedIn
