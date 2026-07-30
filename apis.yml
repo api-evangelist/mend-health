@@ -12,7 +12,19 @@ description: Mend is a HIPAA-compliant telehealth and patient engagement platfor
   is delivered through a login-gated customer knowledge base rather than a public
   developer portal, so Mend's programmatic surface is best characterized as
   partner- and customer-gated rather than openly self-serve.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Paid
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mend-health.png
 tags:
 - Telehealth
 - Telemedicine
