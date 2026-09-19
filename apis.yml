@@ -39,6 +39,15 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mend-health.png
 tags:
 - Telehealth
+- Patient Engagement
+- Behavioral Health
+- Scheduling
+- Video Visits
+- Digital Forms
+- HIPAA
+- Healthcare
+tags_raw:
+- Telehealth
 - Telemedicine
 - Patient Engagement
 - Behavioral Health
@@ -114,6 +123,11 @@ apis:
 - aid: mend-health:mend-health-forms-api
   name: Mend Digital Forms and Intake API
   tags:
+  - Forms
+  - Intake
+  - Consents
+  - Assessment
+  tags_raw:
   - Forms
   - Intake
   - Consents
